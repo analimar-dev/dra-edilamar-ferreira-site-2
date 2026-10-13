@@ -43,14 +43,18 @@ img {
    2. CABEÇALHO
 ============================================ */
 
+
 .cabecalho {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
     width: 100%;
     background-color: var(--branco);
     border-bottom: 1px solid var(--borda);
     box-shadow: 0 3px 12px rgb(36 75 53 / 5%);
 }
+
 
 .cabecalho__container {
     display: flex;
