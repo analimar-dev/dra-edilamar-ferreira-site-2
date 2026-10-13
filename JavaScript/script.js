@@ -108,3 +108,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* ========================================
+   ANIMAÇÃO SUAVE DO BANNER
+======================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const bannerTexto = document.querySelector(".banner__conteudo");
+    const bannerImagem = document.querySelector(".banner__imagem");
+
+    if (!bannerTexto || !bannerImagem) return;
+
+    // Respeita a preferência de quem reduz animações.
+    const movimentoReduzido = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (movimentoReduzido) return;
+
+    bannerTexto.classList.add("banner__animar-texto");
+    bannerImagem.classList.add("banner__animar-imagem");
+});

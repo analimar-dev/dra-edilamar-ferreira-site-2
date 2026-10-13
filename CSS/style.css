@@ -16,7 +16,6 @@
     --branco: #ffffff;
     --creme: #faf9f5;
     --borda: #e8e4da;
-
     --fonte-menu: Georgia, "Times New Roman", serif;
 }
 
@@ -24,6 +23,7 @@ html {
     margin: 0;
     padding: 0;
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -46,46 +46,33 @@ img {
 .cabecalho {
     position: relative;
     z-index: 1000;
-
     width: 100%;
     background-color: var(--branco);
-
     border-bottom: 1px solid var(--borda);
     box-shadow: 0 3px 12px rgb(36 75 53 / 5%);
 }
-
-/* ============================================
-   3. DISTRIBUIÇÃO DOS ELEMENTOS
-============================================ */
 
 .cabecalho__container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     width: 100%;
     max-width: 1440px;
     min-width: 0;
     min-height: 94px;
-
     margin: 0 auto;
     padding: 16px 32px;
-
     gap: 26px;
 }
 
-/* ============================================
-   4. LOGOTIPO
-============================================ */
+/* LOGOTIPO */
 
 .cabecalho__logo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     flex: 0 0 clamp(220px, 19vw, 270px);
     min-width: 0;
-
     text-decoration: none;
 }
 
@@ -94,18 +81,14 @@ img {
     width: 100%;
     max-width: 100%;
     height: auto;
-
     object-fit: contain;
 }
 
-/* ============================================
-   5. ÁREA DE NAVEGAÇÃO
-============================================ */
+/* NAVEGAÇÃO */
 
 .cabecalho__navegacao {
     flex: 1 1 0;
     min-width: 0;
-
     margin: 0;
 }
 
@@ -113,42 +96,31 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
     min-width: 0;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
 }
 
 .cabecalho__lista li {
     flex: 0 0 auto;
-
     margin: 0;
     padding: 0;
 }
 
-/* ============================================
-   6. LINKS DO MENU
-============================================ */
+/* LINKS DO MENU */
 
 .cabecalho__link {
     display: inline-block;
-
     padding: 10px 0;
-
     color: var(--verde);
-
     font-family: var(--fonte-menu);
     font-size: 14px;
     font-weight: 600;
     line-height: 1.5;
-
     text-decoration: none;
     white-space: nowrap;
-
     transition: color 0.2s ease;
 }
 
@@ -161,13 +133,10 @@ img {
     outline-offset: 4px;
 }
 
-/* ============================================
-   7. BOTÃO AGENDAR CONSULTA
-============================================ */
+/* BOTÃO DO CABEÇALHO */
 
 .cabecalho__item-cta {
     flex: 0 0 auto;
-
     margin: 0 0 0 24px !important;
 }
 
@@ -175,27 +144,20 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 44px;
     padding: 10px 20px;
-
     background-color: var(--verde);
     color: var(--dourado);
-
     border: 1px solid var(--verde);
     border-radius: 50px;
-
     font-family: var(--fonte-menu);
     font-size: 14px;
     font-weight: 700;
     line-height: 1.3;
-
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-
     box-shadow: 0 4px 12px rgb(36 75 53 / 10%);
-
     transition:
         background-color 0.2s ease,
         color 0.2s ease,
@@ -213,41 +175,30 @@ img {
     outline-offset: 4px;
 }
 
-/* ============================================
-   8. BOTÃO HAMBÚRGUER
-============================================ */
+/* BOTÃO HAMBÚRGUER */
 
 .cabecalho__menu-toggle {
     display: none;
-
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     flex: 0 0 44px;
     gap: 6px;
-
     width: 44px;
     height: 44px;
     padding: 9px;
-
     background-color: var(--branco);
-
     border: 1px solid var(--borda);
     border-radius: 9px;
-
     cursor: pointer;
 }
 
 .cabecalho__menu-toggle span {
     display: block;
-
     width: 22px;
     height: 2px;
-
     background-color: var(--verde);
     border-radius: 2px;
-
     transition:
         transform 0.2s ease,
         opacity 0.2s ease;
@@ -258,12 +209,9 @@ img {
     outline-offset: 3px;
 }
 
-/* ============================================
-   9. COMPUTADORES E NOTEBOOKS
-============================================ */
+/* NOTEBOOKS */
 
 @media (min-width: 851px) and (max-width: 1150px) {
-
     .cabecalho__container {
         padding-right: 22px;
         padding-left: 22px;
@@ -294,17 +242,14 @@ img {
 }
 
 /* ============================================
-   10. TABLETS E CELULARES
+   3. MENU RESPONSIVO
 ============================================ */
 
 @media (max-width: 850px) {
-
     .cabecalho__container {
         position: relative;
-
         min-height: 78px;
         padding: 12px 20px;
-
         flex-wrap: wrap;
         gap: 12px;
     }
@@ -325,23 +270,16 @@ img {
 
     .cabecalho__navegacao {
         display: none;
-
         position: absolute;
         top: 100%;
         left: 0;
-
         width: 100%;
         max-width: 100%;
         margin: 0;
-
         background-color: var(--branco);
         border-top: 1px solid var(--borda);
-
         box-shadow: 0 10px 18px rgb(36 75 53 / 10%);
     }
-
-    /* Abre o menu quando o JavaScript
-       atualiza aria-expanded para true. */
 
     .cabecalho:has(
         .cabecalho__menu-toggle[aria-expanded="true"]
@@ -354,10 +292,8 @@ img {
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
-
         width: 100%;
         gap: 0;
-
         padding: 12px 20px 20px;
     }
 
@@ -367,13 +303,10 @@ img {
 
     .cabecalho__link {
         display: block;
-
         width: 100%;
         padding: 13px 8px;
-
         font-size: 15px;
         white-space: normal;
-
         border-bottom: 1px solid var(--borda);
     }
 
@@ -383,15 +316,13 @@ img {
 
     .cabecalho__cta {
         display: flex;
-
         width: 100%;
         min-height: 46px;
         padding: 12px 18px;
-
         font-size: 14px;
     }
 
-    /* Animação do hambúrguer para X. */
+    /* HAMBÚRGUER SE TRANSFORMA EM X */
 
     .cabecalho:has(
         .cabecalho__menu-toggle[aria-expanded="true"]
@@ -412,12 +343,9 @@ img {
     }
 }
 
-/* ============================================
-   11. CELULARES PEQUENOS
-============================================ */
+/* CELULARES PEQUENOS: CABEÇALHO */
 
 @media (max-width: 380px) {
-
     .cabecalho__container {
         min-height: 68px;
         padding: 10px 12px;
@@ -433,7 +361,6 @@ img {
 
     .cabecalho__menu-toggle {
         flex-basis: 40px;
-
         width: 40px;
         height: 40px;
     }
@@ -445,14 +372,311 @@ img {
 }
 
 /* ============================================
-   12. ACESSIBILIDADE
+   4. BANNER PRINCIPAL
 ============================================ */
 
+.banner {
+    width: 100%;
+    padding: 64px 5%;
+    background-color: var(--creme);
+}
+
+.banner__container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: clamp(32px, 5vw, 64px);
+    row-gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TEXTO À ESQUERDA */
+
+.banner__conteudo {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    max-width: 590px;
+}
+
+.banner__especialidade {
+    margin: 0 0 20px;
+    color: var(--verde);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.banner__titulo {
+    margin: 0 0 24px;
+    color: var(--verde);
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.banner__titulo span {
+    display: block;
+    color: var(--dourado);
+}
+
+.banner__descricao {
+    max-width: 540px;
+    margin: 0 0 20px;
+    color: #555b55;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.banner__publico {
+    margin: 0;
+    color: var(--verde);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* FOTO À DIREITA */
+
+.banner__imagem {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    max-width: 440px;
+    justify-self: end;
+}
+
+.banner__imagem img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 4.5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 180px 180px 12px 12px;
+}
+
+/* BOTÃO CENTRALIZADO NA PÁGINA */
+
+.banner__cta {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+    align-self: start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-width: 190px;
+    min-height: 54px;
+    margin: 0;
+    padding: 14px 30px;
+    background-color: var(--verde);
+    color: var(--dourado);
+    border: 1px solid var(--verde);
+    border-radius: 50px;
+    font-family: var(--fonte-menu);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgb(36 75 53 / 10%);
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.banner__cta:hover {
+    background-color: var(--dourado);
+    color: var(--verde);
+    border-color: var(--dourado);
+    transform: translateY(-2px);
+}
+
+.banner__cta:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 4px;
+}
+
+/* ============================================
+   5. NOTEBOOKS E TABLETS NA HORIZONTAL
+============================================ */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .banner {
+        padding: 52px 4%;
+    }
+
+    .banner__container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+        column-gap: 32px;
+    }
+
+    .banner__titulo {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+    }
+
+    .banner__descricao {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   6. TABLETS E CELULARES
+============================================ */
+
+@media (max-width: 768px) {
+    .banner {
+        padding: 40px 6% 48px;
+    }
+
+    .banner__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .banner__conteudo {
+        order: 1;
+        width: 100%;
+        max-width: 590px;
+        align-self: stretch;
+    }
+
+    .banner__especialidade {
+        margin-bottom: 16px;
+        font-size: 0.82rem;
+    }
+
+    .banner__titulo {
+        margin-bottom: 20px;
+        font-size: clamp(2.2rem, 8vw, 3rem);
+        line-height: 1.18;
+        letter-spacing: -0.8px;
+    }
+
+    .banner__descricao {
+        margin-bottom: 16px;
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .banner__publico {
+        font-size: 0.92rem;
+    }
+
+    .banner__imagem {
+        order: 2;
+        flex: none;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .banner__imagem img {
+        aspect-ratio: 4 / 3.5;
+        border-radius: 120px 120px 10px 10px;
+        object-position: center 25%;
+    }
+
+    .banner__cta {
+        order: 3;
+        align-self: center;
+        min-width: 190px;
+        max-width: 100%;
+        min-height: 52px;
+        padding: 14px 24px;
+        white-space: normal;
+    }
+}
+
+/* CELULARES ESTREITOS */
+
+@media (max-width: 375px) {
+    .banner {
+        padding: 32px 5% 40px;
+    }
+
+    .banner__titulo {
+        font-size: 2.1rem;
+    }
+
+    .banner__especialidade {
+        font-size: 0.76rem;
+        letter-spacing: 0.5px;
+    }
+
+    .banner__cta {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ============================================
+   7. ANIMAÇÕES E ACESSIBILIDADE
+============================================ */
+
+.banner__animar-texto {
+    animation: banner-entrar-esquerda 0.9s ease-out both;
+}
+
+.banner__animar-imagem {
+    animation: banner-entrar-direita 1s ease-out 0.15s both;
+}
+
+@keyframes banner-entrar-esquerda {
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes banner-entrar-direita {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
     .cabecalho__link,
     .cabecalho__cta,
-    .cabecalho__menu-toggle span {
+    .cabecalho__menu-toggle span,
+    .banner__cta {
         transition: none;
+    }
+
+    .banner__cta:hover {
+        transform: none;
+    }
+
+    .banner__animar-texto,
+    .banner__animar-imagem {
+        animation: none;
     }
 }
