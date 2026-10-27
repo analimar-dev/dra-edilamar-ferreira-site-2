@@ -977,3 +977,1691 @@ img {
         transform: none;
     }
 }
+ 
+
+/* ========================================
+   SEÇÃO PARA PESSOAS
+======================================== */
+
+.pessoas {
+    width: 100%;
+    padding: 80px 24px;
+    background-color: var(--creme);
+}
+
+.pessoas__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho da seção */
+
+.pessoas__cabecalho {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.pessoas__subtitulo {
+    margin: 0 0 12px;
+    color: var(--dourado);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+}
+
+.pessoas__titulo {
+    margin: 0 0 16px;
+    color: var(--verde);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-wrap: balance;
+}
+
+.pessoas__descricao {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #4f5851;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Grade de cards */
+
+.pessoas__lista {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.pessoas__item {
+    min-width: 0;
+    height: 100%;
+}
+
+/* Card clicável */
+
+.pessoas__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+    min-height: 190px;
+    height: 100%;
+    padding: 28px 22px;
+    border: 1px solid #e0e6dc;
+    border-radius: 18px;
+    background-color: var(--branco);
+    color: var(--verde);
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgb(36 75 53 / 7%);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Círculo dos ícones */
+
+.pessoas__icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    border: 1px solid var(--dourado);
+    border-radius: 50%;
+    background-color: var(--verde);
+    color: var(--branco);
+    line-height: 1;
+}
+
+/* Tamanho e proporção dos desenhos SVG */
+
+.pessoas__icone svg {
+    display: block;
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    overflow: visible;
+}
+
+/* Traços brancos dos ícones */
+
+.pessoas__icone svg path,
+.pessoas__icone svg circle,
+.pessoas__icone svg rect,
+.pessoas__icone svg line,
+.pessoas__icone svg polyline {
+    stroke: currentColor;
+}
+
+/* Títulos dos cards */
+
+.pessoas__card-titulo {
+    margin: 0;
+    color: var(--verde);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-wrap: balance;
+}
+
+/* Efeito ao passar o mouse */
+
+@media (hover: hover) {
+    .pessoas__card:hover {
+        transform: translateY(-5px);
+        border-color: var(--dourado);
+        box-shadow: 0 10px 24px rgb(36 75 53 / 12%);
+    }
+
+    .pessoas__card:hover .pessoas__icone {
+        background-color: var(--verde-hover);
+    }
+}
+
+/* Foco visível para navegação por teclado */
+
+.pessoas__card:focus-visible,
+.pessoas__cta:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 5px;
+}
+
+/* Área de contato */
+
+.pessoas__contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 42px auto 0;
+    text-align: center;
+}
+
+.pessoas__contato-texto {
+    margin: 0;
+    color: var(--verde);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Botão de contato pelo WhatsApp */
+
+.pessoas__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 14px 26px;
+    border: 1px solid var(--dourado);
+    border-radius: 999px;
+    background-color: var(--verde);
+    color: var(--dourado);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    box-shadow: 0 4px 12px rgb(36 75 53 / 12%);
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+@media (hover: hover) {
+    .pessoas__cta:hover {
+        background-color: var(--dourado);
+        color: var(--verde);
+        border-color: var(--dourado);
+        box-shadow: 0 4px 12px rgb(36 75 53 / 10%);
+        transform: translateY(-2px);
+    }
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+    .pessoas {
+        padding: 64px 24px;
+    }
+
+    .pessoas__lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .pessoas__card {
+        min-height: 180px;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 560px) {
+    .pessoas {
+        padding: 52px 20px;
+    }
+
+    .pessoas__cabecalho {
+        margin-bottom: 30px;
+    }
+
+    .pessoas__subtitulo {
+        font-size: 0.75rem;
+    }
+
+    .pessoas__titulo {
+        font-size: clamp(1.55rem, 6vw, 2rem);
+    }
+
+    .pessoas__descricao {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .pessoas__lista {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 380px;
+    }
+
+    .pessoas__card {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 18px;
+        min-height: 112px;
+        padding: 20px;
+        text-align: left;
+    }
+
+    .pessoas__icone {
+        flex-basis: 52px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .pessoas__icone svg {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .pessoas__card-titulo {
+        flex: 1;
+        font-size: 1rem;
+    }
+
+    .pessoas__contato {
+        margin-top: 32px;
+    }
+
+    .pessoas__cta {
+        width: 100%;
+        max-width: 380px;
+        padding: 14px 20px;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+    .pessoas__card,
+    .pessoas__cta {
+        transition: none;
+    }
+
+    .pessoas__card:hover,
+    .pessoas__cta:hover {
+        transform: none;
+    }
+}
+
+
+
+/* ============================================
+   SEÇÃO SOBRE — DRA. EDILAMAR
+   Layout desktop, tablet e celular
+============================================ */
+
+.sobre {
+    width: 100%;
+    padding: 80px 24px;
+    background-color: var(--branco);
+}
+
+.sobre__container {
+    display: grid;
+    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(36px, 5vw, 64px);
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   FOTOGRAFIA
+============================================ */
+
+.sobre__imagem {
+    width: 100%;
+    max-width: 440px;
+    min-width: 0;
+    justify-self: center;
+}
+
+.sobre__imagem img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: 180px 180px 18px 18px;
+    box-shadow: 0 12px 30px rgb(36 75 53 / 10%);
+}
+
+/* ============================================
+   CONTEÚDO
+============================================ */
+
+.sobre__conteudo {
+    width: 100%;
+    min-width: 0;
+}
+
+.sobre__subtitulo {
+    display: block;
+    margin: 0 0 14px;
+    color: var(--dourado);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+}
+
+.sobre__titulo {
+    margin: 0 0 24px;
+    color: var(--verde);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-wrap: balance;
+}
+
+.sobre__descricao,
+.sobre__texto {
+    margin: 0 0 18px;
+    color: #4f5851;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.sobre__descricao strong,
+.sobre__texto strong {
+    color: var(--verde);
+    font-weight: 700;
+}
+
+/* ============================================
+   BOTÃO DE AGENDAMENTO
+============================================ */
+
+.sobre__acoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.sobre__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 14px 26px;
+    border: 1px solid var(--verde);
+    border-radius: 999px;
+    background-color: var(--verde);
+    color: var(--dourado);
+    font-family: var(--fonte-menu);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    box-shadow: 0 4px 12px rgb(36 75 53 / 12%);
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.sobre__cta:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) {
+    .sobre__cta:hover {
+        background-color: var(--dourado);
+        color: var(--verde);
+        border-color: var(--dourado);
+        transform: translateY(-2px);
+    }
+}
+
+/* ============================================
+   TABLETS
+============================================ */
+
+@media (min-width: 651px) and (max-width: 900px) {
+    .sobre {
+        padding: 64px 24px;
+    }
+
+    .sobre__container {
+        grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .sobre__imagem img {
+        border-radius: 140px 140px 16px 16px;
+    }
+
+    .sobre__titulo {
+        font-size: clamp(1.65rem, 3.5vw, 2.2rem);
+    }
+
+    .sobre__descricao,
+    .sobre__texto {
+        font-size: 0.96rem;
+        line-height: 1.75;
+    }
+}
+
+/* ============================================
+   CELULARES
+   Ordem: subtítulo, título, foto, textos e botão
+============================================ */
+
+@media (max-width: 650px) {
+    .sobre {
+        padding: 52px 20px;
+    }
+
+    /*
+       Flexibiliza os elementos internos do conteúdo
+       para permitir reposicionar a fotografia entre
+       o título e os textos, sem alterar o HTML.
+    */
+
+    .sobre__container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-width: 480px;
+    }
+
+    .sobre__conteudo {
+        display: contents;
+    }
+
+    /* 1. Subtítulo */
+
+    .sobre__subtitulo {
+        order: 1;
+        margin: 0 0 10px;
+        font-size: 0.75rem;
+    }
+
+    /* 2. Título */
+
+    .sobre__titulo {
+        order: 2;
+        margin: 0 0 24px;
+        font-size: clamp(1.65rem, 6vw, 2.1rem);
+        line-height: 1.3;
+    }
+
+    /* 3. Fotografia logo após o título */
+
+    .sobre__imagem {
+        order: 3;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto 28px;
+    }
+
+    .sobre__imagem img {
+        width: 100%;
+        aspect-ratio: 4 / 4.5;
+        object-position: center 30%;
+        border-radius: 120px 120px 14px 14px;
+    }
+
+    /* 4. Primeiro parágrafo */
+
+    .sobre__descricao {
+        order: 4;
+        margin: 0 0 18px;
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    /* 5. Parágrafos seguintes */
+
+    .sobre__conteudo > .sobre__texto:nth-of-type(3) {
+        order: 5;
+    }
+
+    .sobre__conteudo > .sobre__texto:nth-of-type(4) {
+        order: 6;
+    }
+
+    .sobre__conteudo > .sobre__texto:nth-of-type(5) {
+        order: 7;
+    }
+
+    .sobre__texto {
+        margin: 0 0 18px;
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    /* 6. Botão no final */
+
+    .sobre__acoes {
+        order: 8;
+        display: flex;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .sobre__cta {
+        width: 100%;
+        min-height: 48px;
+        padding: 14px 20px;
+    }
+}
+
+/* ============================================
+   CELULARES ESTREITOS
+============================================ */
+
+@media (max-width: 375px) {
+    .sobre {
+        padding: 44px 16px;
+    }
+
+    .sobre__titulo {
+        font-size: 1.6rem;
+    }
+
+    .sobre__imagem img {
+        border-radius: 100px 100px 12px 12px;
+    }
+}
+
+/* ============================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .sobre__cta {
+        transition: none;
+    }
+
+    .sobre__cta:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   ANIMAÇÕES SUAVES DAS DEMAIS SEÇÕES
+   Site Dra. Edilamar Ferreira
+============================================ */
+
+.animar-entrada {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    transition-delay: var(--atraso-animacao, 0ms);
+}
+
+.animar-entrada.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .animar-entrada {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ============================================
+   SEÇÃO DÚVIDAS FREQUENTES
+   Dra. Edilamar Ferreira
+============================================ */
+
+.duvidas {
+    width: 100%;
+    padding: 80px 24px;
+    background-color: #f1f4ef;
+    scroll-margin-top: 100px;
+}
+
+.duvidas__container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho da seção */
+
+.duvidas__cabecalho {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.duvidas__subtitulo {
+    display: block;
+    margin: 0 0 12px;
+    color: var(--dourado, #cda044);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.duvidas__titulo {
+    margin: 0 0 16px;
+    color: var(--verde, #244b35);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-wrap: balance;
+}
+
+.duvidas__descricao {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #4f5851;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Lista de perguntas */
+
+.duvidas__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Cada pergunta */
+
+.duvidas__item {
+    overflow: hidden;
+    background-color: var(--branco, #ffffff);
+    border: 1px solid #e2e8df;
+    border-left: 3px solid var(--dourado, #cda044);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgb(36 75 53 / 5%);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.duvidas__item:hover {
+    border-color: var(--dourado, #cda044);
+    box-shadow: 0 7px 20px rgb(36 75 53 / 9%);
+}
+
+/* Pergunta clicável */
+
+.duvidas__pergunta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 76px;
+    padding: 20px 24px;
+    color: var(--verde, #244b35);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    list-style: none;
+    cursor: pointer;
+}
+
+/* Remove o marcador padrão do navegador */
+
+.duvidas__pergunta::-webkit-details-marker {
+    display: none;
+}
+
+.duvidas__pergunta::marker {
+    content: "";
+}
+
+/* Ícone de mais e menos */
+
+.duvidas__icone {
+    position: relative;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--dourado, #cda044);
+    border-radius: 50%;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.duvidas__icone::before,
+.duvidas__icone::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    background-color: var(--verde, #244b35);
+    border-radius: 2px;
+    content: "";
+    transform: translate(-50%, -50%);
+}
+
+.duvidas__icone::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+/* Aparência da pergunta aberta */
+
+.duvidas__item[open] {
+    border-color: var(--dourado, #cda044);
+}
+
+.duvidas__item[open] .duvidas__pergunta {
+    color: var(--verde, #244b35);
+}
+
+.duvidas__item[open] .duvidas__icone {
+    background-color: #f1f4ef;
+}
+
+.duvidas__item[open] .duvidas__icone::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Resposta */
+
+.duvidas__resposta {
+    padding: 0 24px 22px;
+    animation: duvidas-aparecer 0.3s ease-out;
+}
+
+.duvidas__resposta p {
+    margin: 0;
+    color: #4f5851;
+    font-size: 0.96rem;
+    line-height: 1.85;
+}
+
+/* Entrada suave da resposta */
+
+@keyframes duvidas-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Foco visível para teclado */
+
+.duvidas__pergunta:focus-visible {
+    outline: 3px solid var(--verde, #244b35);
+    outline-offset: -4px;
+    border-radius: 8px;
+}
+
+/* ============================================
+   RESPONSIVIDADE — TABLETS
+============================================ */
+
+@media (max-width: 768px) {
+    .duvidas {
+        padding: 64px 22px;
+    }
+
+    .duvidas__cabecalho {
+        margin-bottom: 34px;
+    }
+
+    .duvidas__pergunta {
+        min-height: 70px;
+        padding: 18px 20px;
+    }
+
+    .duvidas__resposta {
+        padding: 0 20px 20px;
+    }
+}
+
+/* ============================================
+   RESPONSIVIDADE — CELULARES
+============================================ */
+
+@media (max-width: 480px) {
+    .duvidas {
+        padding: 52px 18px;
+    }
+
+    .duvidas__cabecalho {
+        margin-bottom: 28px;
+    }
+
+    .duvidas__subtitulo {
+        font-size: 0.75rem;
+    }
+
+    .duvidas__titulo {
+        font-size: clamp(1.55rem, 6vw, 2rem);
+        line-height: 1.3;
+    }
+
+    .duvidas__descricao {
+        font-size: 0.94rem;
+        line-height: 1.75;
+    }
+
+    .duvidas__lista {
+        gap: 12px;
+    }
+
+    .duvidas__pergunta {
+        gap: 12px;
+        min-height: 68px;
+        padding: 16px;
+        font-size: 0.94rem;
+    }
+
+    .duvidas__icone {
+        flex-basis: 26px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .duvidas__resposta {
+        padding: 0 16px 18px;
+    }
+
+    .duvidas__resposta p {
+        font-size: 0.92rem;
+        line-height: 1.8;
+    }
+}
+
+/* ============================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .duvidas__item,
+    .duvidas__icone,
+    .duvidas__icone::after {
+        transition: none;
+    }
+
+    .duvidas__resposta {
+        animation: none;
+    }
+}
+
+/* ==================================================
+   RODAPÉ INSTITUCIONAL — DRA. EDILAMAR
+   ================================================== */
+
+.rodape {
+    width: 100%;
+    padding: 75px 24px 0;
+    box-sizing: border-box;
+    background: linear-gradient(
+        135deg,
+        #234530 0%,
+        #1f402d 55%,
+        #1b3827 100%
+    );
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe dourado no topo */
+
+.rodape::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #C9A04A,
+        transparent
+    );
+}
+
+/* Container principal */
+
+.rodape__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.8fr 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+/* Identidade visual */
+
+.rodape__marca {
+    min-width: 0;
+}
+
+.rodape__logo {
+    display: inline-block;
+    padding: 10px 14px;
+    margin-bottom: 22px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    transition: transform 0.3s ease;
+}
+
+.rodape__logo img {
+    display: block;
+    width: 205px;
+    max-width: 100%;
+    height: auto;
+}
+
+.rodape__logo:hover {
+    transform: translateY(-2px);
+}
+
+.rodape__logo:focus-visible {
+    outline: 3px solid #C9A04A;
+    outline-offset: 5px;
+}
+
+.rodape__descricao {
+    max-width: 290px;
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.rodape__clinica {
+    display: inline-block;
+    margin: 0;
+    color: #C9A04A;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+/* Colunas */
+
+.rodape__coluna {
+    min-width: 0;
+}
+
+.rodape__titulo {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 28px;
+    padding-bottom: 12px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.rodape__titulo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38px;
+    height: 2px;
+    background: #C9A04A;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.rodape__coluna:hover .rodape__titulo::after {
+    width: 55px;
+}
+
+/* Listas e links */
+
+.rodape__lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.rodape__lista li {
+    margin-bottom: 16px;
+}
+
+.rodape__lista li:last-child {
+    margin-bottom: 0;
+}
+
+.rodape__lista a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 14px;
+    line-height: 1.7;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.rodape__lista a:hover {
+    color: #C9A04A;
+    transform: translateX(3px);
+}
+
+.rodape__lista a:focus-visible,
+.rodape__link-mapa:focus-visible,
+.rodape__credito a:focus-visible {
+    outline: 2px solid #C9A04A;
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+/* Endereço */
+
+.rodape__endereco {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.rodape__endereco svg {
+    flex: 0 0 auto;
+    margin-top: 4px;
+    color: #C9A04A;
+}
+
+.rodape__link-mapa {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #C9A04A;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.rodape__link-mapa:hover {
+    color: #ffffff;
+}
+
+/* Mapa do Google */
+
+.rodape__mapa {
+    width: 100%;
+    height: 230px;
+    margin-top: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid rgba(201, 160, 74, 0.65);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.rodape__mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Parte inferior */
+
+.rodape__inferior {
+    width: 100%;
+    max-width: 1200px;
+    margin: 55px auto 0;
+    padding: 24px 0 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    box-sizing: border-box;
+}
+
+.rodape__copyright {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.rodape__legal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.rodape__legal a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    line-height: 1.7;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.rodape__legal a:hover {
+    color: #C9A04A;
+}
+
+/* Crédito Analimar Tech */
+
+.rodape__credito {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.rodape__credito a {
+    color: #C9A04A;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.rodape__credito a:hover {
+    color: #ffffff;
+}
+
+/* ==================================================
+   TABLETS
+   ================================================== */
+
+@media (max-width: 1100px) {
+    .rodape__container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 42px 32px;
+    }
+
+    .rodape__mapa {
+        height: 260px;
+    }
+}
+
+/* ==================================================
+   CELULARES
+   ================================================== */
+
+@media (max-width: 768px) {
+    .rodape {
+        padding: 60px 22px 0;
+    }
+
+    .rodape__container {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .rodape__marca {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .rodape__logo img {
+        width: 180px;
+    }
+
+    .rodape__descricao {
+        max-width: 320px;
+    }
+
+    .rodape__coluna {
+        text-align: center;
+    }
+
+    .rodape__titulo {
+        margin-bottom: 22px;
+    }
+
+    .rodape__titulo::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .rodape__coluna:hover .rodape__titulo::after {
+        width: 38px;
+    }
+
+    .rodape__lista {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape__lista li {
+        max-width: 100%;
+    }
+
+    .rodape__lista a:hover {
+        transform: none;
+    }
+
+    .rodape__endereco {
+        width: fit-content;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .rodape__link-mapa {
+        justify-content: center;
+    }
+
+    .rodape__mapa {
+        height: 260px;
+        border-radius: 14px;
+    }
+
+    .rodape__inferior {
+        margin-top: 42px;
+        padding: 24px 0;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 14px;
+    }
+
+    .rodape__legal {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+}
+
+/* ==================================================
+   CELULARES PEQUENOS
+   ================================================== */
+
+@media (max-width: 480px) {
+    .rodape {
+        padding: 50px 16px 0;
+    }
+
+    .rodape__container {
+        gap: 32px;
+    }
+
+    .rodape__logo img {
+        width: 165px;
+    }
+
+    .rodape__descricao {
+        font-size: 14px;
+    }
+
+    .rodape__titulo {
+        font-size: 16px;
+    }
+
+    .rodape__lista a,
+    .rodape__endereco {
+        font-size: 13px;
+    }
+
+    .rodape__mapa {
+        height: 230px;
+    }
+
+    .rodape__copyright,
+    .rodape__legal a {
+        font-size: 11px;
+    }
+
+    .rodape__credito {
+        font-size: 12px;
+    }
+}
+
+/* Respeita usuários que reduzem animações */
+
+@media (prefers-reduced-motion: reduce) {
+    .rodape *,
+    .rodape *::before,
+    .rodape *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================
+   PÁGINA DE POLÍTICA DE PRIVACIDADE
+   E.CLINIC — DRA. EDILAMAR FERREIRA
+========================================= */
+
+.pagina-legal {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: #faf9f5;
+    color: #344238;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+}
+
+.container-legal {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px;
+    background-color: #ffffff;
+    border: 1px solid #e8e4da;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(36, 75, 53, 0.07);
+}
+
+/* Link para voltar ao site */
+
+.voltar-site {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: #244b35;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.voltar-site:hover {
+    color: #b58a32;
+}
+
+.voltar-site:focus-visible {
+    outline: 3px solid #cda044;
+    outline-offset: 4px;
+}
+
+/* Pequeno título superior */
+
+.titulo-pequeno {
+    display: block;
+    margin-bottom: 12px;
+    color: #b58a32;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+/* Título principal */
+
+.container-legal h1 {
+    margin: 0 0 24px;
+    color: #244b35;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.25;
+}
+
+/* Introdução */
+
+.introducao-legal {
+    margin: 0 0 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e8e4da;
+    color: #536057;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* Seções e subtítulos */
+
+.container-legal section {
+    margin-bottom: 32px;
+}
+
+.container-legal h2 {
+    margin: 0 0 12px;
+    color: #244b35;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Parágrafos */
+
+.container-legal p {
+    margin: 0 0 16px;
+    color: #4f5851;
+    font-size: 15px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.container-legal section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Data da última atualização */
+
+.atualizacao-legal {
+    margin-top: 36px !important;
+    padding-top: 20px;
+    border-top: 1px solid #e8e4da;
+    color: #737b74 !important;
+    font-size: 13px !important;
+}
+
+/* Botão de retorno */
+
+.container-legal .botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: 12px;
+    padding: 13px 24px;
+    border: 1px solid #244b35;
+    border-radius: 50px;
+    background-color: #244b35;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.container-legal .botao:hover {
+    border-color: #cda044;
+    background-color: #cda044;
+    color: #183b28;
+}
+
+.container-legal .botao:focus-visible {
+    outline: 3px solid #cda044;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 768px) {
+    .pagina-legal {
+        padding: 36px 18px;
+    }
+
+    .container-legal {
+        padding: 32px 26px;
+    }
+
+    .container-legal h1 {
+        font-size: 30px;
+    }
+
+    .container-legal h2 {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 480px) {
+    .pagina-legal {
+        padding: 18px 10px;
+    }
+
+    .container-legal {
+        padding: 24px 18px;
+        border-radius: 8px;
+    }
+
+    .voltar-site {
+        margin-bottom: 26px;
+    }
+
+    .container-legal h1 {
+        font-size: 26px;
+    }
+
+    .container-legal h2 {
+        font-size: 17px;
+    }
+
+    .container-legal p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .introducao-legal {
+        font-size: 15px;
+    }
+
+    .container-legal .botao {
+        width: 100%;
+    }
+}
+
+/* Acessibilidade: movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+    .voltar-site,
+    .container-legal .botao {
+        transition: none;
+    }
+}
+
+/* ========================================
+   BOTÃO FLUTUANTE DO WHATSAPP
+======================================== */
+
+.whatsapp-flutuante {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #20B85A;
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.20);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Efeito ao passar o mouse */
+
+.whatsapp-flutuante:hover {
+    background-color: #168f46;
+    transform: translateY(-4px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.24);
+}
+
+/* Acessibilidade pelo teclado */
+
+.whatsapp-flutuante:focus-visible {
+    outline: 3px solid #C9A04A;
+    outline-offset: 4px;
+}
+
+/* Ajuste do ícone */
+
+.whatsapp-flutuante svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Ajuste para celulares */
+
+@media (max-width: 480px) {
+    .whatsapp-flutuante {
+        right: 16px;
+        bottom: 16px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-flutuante svg {
+        width: 27px;
+        height: 27px;
+    }
+}
+
+/* Respeita a preferência por menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-flutuante {
+        transition: none;
+    }
+}

@@ -129,3 +129,76 @@ document.addEventListener("DOMContentLoaded", () => {
     bannerTexto.classList.add("banner__animar-texto");
     bannerImagem.classList.add("banner__animar-imagem");
 });
+
+/* ============================================
+   ANIMAÇÕES SUAVES DAS DEMAIS SEÇÕES
+============================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const movimentoReduzido = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (movimentoReduzido) return;
+
+    const elementos = document.querySelectorAll(`
+        .sobre__imagem,
+        .sobre__subtitulo,
+        .sobre__titulo,
+        .sobre__descricao,
+        .sobre__texto,
+        .sobre__acoes,
+        .pessoas__cabecalho,
+        .pessoas__item,
+        .pessoas__contato,
+        .empresas__cabecalho,
+        .empresas__item,
+        .empresas__contato
+    `);
+
+    if (!elementos.length) return;
+
+    elementos.forEach((elemento) => {
+        elemento.classList.add("animar-entrada");
+    });
+
+    /* Pequeno intervalo entre os cartões */
+    document.querySelectorAll(
+        ".pessoas__lista, .empresas__lista"
+    ).forEach((lista) => {
+        lista.querySelectorAll(":scope > li").forEach(
+            (item, indice) => {
+                item.style.setProperty(
+                    "--atraso-animacao",
+                    `${indice * 100}ms`
+                );
+            }
+        );
+    });
+
+    /* Revela os elementos quando entram na tela */
+    if ("IntersectionObserver" in window) {
+        const observador = new IntersectionObserver(
+            (entradas, observer) => {
+                entradas.forEach((entrada) => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add("visivel");
+                        observer.unobserve(entrada.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -30px 0px"
+            }
+        );
+
+        elementos.forEach((elemento) => {
+            observador.observe(elemento);
+        });
+    } else {
+        elementos.forEach((elemento) => {
+            elemento.classList.add("visivel");
+        });
+    }
+});
