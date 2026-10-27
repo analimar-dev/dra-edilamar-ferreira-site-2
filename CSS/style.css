@@ -2665,3 +2665,33 @@ img {
         transition: none;
     }
 }
+
+/* CORREÇÃO DOS LINKS DO RODAPÉ */
+.rodape__coluna ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rodape__coluna li {
+    margin-bottom: 8px;
+}
+
+.rodape__coluna a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.rodape__coluna a:hover {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+.rodape__coluna a:focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
