@@ -606,10 +606,9 @@ img {
 }
 
 /* CELULARES ESTREITOS */
-
 @media (max-width: 375px) {
     .banner {
-        padding: 32px 5% 40px;
+        padding: 120px 5% 40px;
     }
 
     .banner__titulo {
