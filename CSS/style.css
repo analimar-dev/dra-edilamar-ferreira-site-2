@@ -1932,6 +1932,7 @@ img {
     color: #ffffff;
     position: relative;
     overflow: hidden;
+        scroll-margin-top: 100px;
 }
 
 /* Detalhe dourado no topo */
@@ -1958,8 +1959,8 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.1fr 0.8fr 1fr 1.2fr;
-    gap: 40px;
+    grid-template-columns: 1.1fr 1.2fr 1.3fr 1.2fr;
+    gap: 32px;
     align-items: start;
     box-sizing: border-box;
 }
